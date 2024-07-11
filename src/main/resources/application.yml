@@ -6,7 +6,9 @@ spring:
       local: local
       dev:
       prod:
-
+gcp:
+  api:
+    key: ${GCP_API_KEY}
 ---
 spring:
   config:
