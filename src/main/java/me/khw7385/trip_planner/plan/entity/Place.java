@@ -4,8 +4,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @MappedSuperclass
+@Getter
+@NoArgsConstructor
 public class Place {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,4 +18,10 @@ public class Place {
     private String name;
     private Double latitude;
     private Double longitude;
+
+    public Place(String name, Double latitude, Double longitude) {
+        this.name = name;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 }
